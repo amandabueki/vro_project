@@ -1,5 +1,5 @@
 # Analysis of changes in heavy rainfall, regional temperature, and potential 
-runoff volumes in Bremen
+# runoff volumes in Bremen
 
 A student project based on a long-term (75 years) geodata from the area of 
 Bremen. The project shows the relation between climate change, heavy rainfall 
@@ -109,6 +109,7 @@ each days using the original column and added to the new CSV.
 ============================================================================
 
 ## 5. Project structure
+```
 vro_project/
 │
 ├── data/
@@ -134,6 +135,7 @@ vro_project/
 ├── README.md                           # <-- main documentation
 ├── requirements.txt
 └── main.py                             # main entry point
+```
 
 ============================================================================
 
@@ -213,6 +215,8 @@ package in the order above.
 
 ## 9. Baseline forecasting methods
 
+?
+
 This project uses **only simple, transparent baselines** – no machine
 learning. The methods are:
 
@@ -259,36 +263,26 @@ fig.savefig("reports/figures/<name>.png", dpi=300)
 
 The following figures are saved in `reports/figures/`:
 
-| Filename                      | Content                                 |
-|-------------------------------|-----------------------------------------|
-| `annual_max_precip.png`       | Maximal precipitation amount (mm)       |
-|                               | of each year                            |
-| `annual_mean_temp.png`        | Mean temperature (°C) of each year      |
-| `heavy_rainfall_days.png`     | Annual frequency of heavy rainfall days |
-| `max_consecutive_precip.png`  | Maximum consecutive precipitation       | 
-|                               | over three or five days                 |
-| `monthly_dist.png`            | Monthly distribution of                 |
-|                               | heavy rainfall events                   |
-| `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall     |
-|                               | events compared with temperature        |
-| `percentile_days.png`         | Annual frequency of extreme             |
-|                               | precipitation days                      |
-| `seasonal_dist.png`           | Seasonal distribution of                |
-|                               | heavy rainfall events                   |
-| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)          |
-| `seasonal_temp_vs_rain.png`   | Seasonal variation of heavy rainfall    |
-|                               | events compared with temperature        |
-| `temp_trend.png`              | Trend of temperature change             |
-| `temp_vs_heavy_rainfall.png`  | Annual mean temperature compared        |
-|                               | with heavy rainfall days                |
-| `temp_vs_max_precip.png`      | Annual maximum precipitation compared   |
-|                               | with mean temperature                   |
-| `temp_vs_percentile.png`      | Annual frequency of extreme precipi-    |
-|                               | tation days compared with temperature   |
+| Filename                      | Content                                                                   |
+|-------------------------------|---------------------------------------------------------------------------|
+| `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                            |
+| `annual_mean_temp.png`        | Mean temperature (°C) of each year                                        |
+| `heavy_rainfall_days.png`     | Annual frequency of heavy rainfall days                                   |
+| `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days                 |
+| `monthly_dist.png`            | Monthly distribution of heavy rainfall events                             |
+| `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature      |
+| `percentile_days.png`         | Annual frequency of extreme precipitation days                            |
+| `seasonal_dist.png`           | Seasonal distribution of heavy rainfall events                            |
+| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)                                            |
+| `seasonal_temp_vs_rain.png`   | Seasonal variation of heavy rainfall events compared with temperature     |
+| `temp_trend.png`              | Trend of temperature change                                               |
+| `temp_vs_heavy_rainfall.png`  | Annual mean temperature compared with heavy rainfall days                 |
+| `temp_vs_max_precip.png`      | Annual maximum precipitation compared with mean temperature               |
+| `temp_vs_percentile.png`      | Annual frequency of extreme precipitation days compared with temperature  |
 
 These figures can be inserted directly into the project report.
 
-
+Ich würde das hier löschen, weil wir keine machine-learning machen wollen(?)
 (## 12. Future machine-learning extension
 
 The project is intentionally simple, but it is structured so that an
@@ -307,14 +301,23 @@ ML extension can be added later without rewriting everything:
 This makes the project a natural starting point for a follow-up
 course on data-driven energy analytics.)
 
+## 12. Future plans with the project
+
+- Some graphs could not be plotted because of the small values of the 
+   created columns `rain_6_mm/h` and `rain_1_mm/h`. We will work on a 
+   solution for being able to plot those graphs as well and still be 
+   precise. 
+- Furthermore, we are still working on the report, therefore it is not 
+   clear yet, which graphs, comparisons & correlations we will need 
+   for our final project. That means, that some analysis will be changed 
+   or completely replaced, however, the structure of the project remains.
+
 ============================================================================
 
 ## 13. References
 
-- Open Power System Data. *Time series* package, version 2020-10-06.
-  <https://data.open-power-system-data.org/time_series/>
-- ENTSO-E Transparency Platform.
-  <https://transparency.entsoe.eu/>
+- Meterological Data. *Time series* package, version 2020-02-15.
+  <https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-europe?tab=overview>
 - pandas documentation. <https://pandas.pydata.org/docs/>
 - matplotlib documentation. <https://matplotlib.org/stable/>
 
