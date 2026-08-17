@@ -1,5 +1,4 @@
-# Analysis of changes in heavy rainfall, regional temperature, and potential 
-# runoff volumes in Bremen
+# Analysis of changes in heavy rainfall, regional temperature, and potential runoff volumes in Bremen
 
 A student project based on a long-term (75 years) geodata from the area of 
 Bremen. The project shows the relation between climate change, heavy rainfall 
@@ -282,8 +281,9 @@ The following figures are saved in `reports/figures/`:
 
 These figures can be inserted directly into the project report.
 
+## 12. Future machine-learning extension
+
 Ich würde das hier löschen, weil wir keine machine-learning machen wollen(?)
-(## 12. Future machine-learning extension
 
 The project is intentionally simple, but it is structured so that an
 ML extension can be added later without rewriting everything:
@@ -299,9 +299,9 @@ ML extension can be added later without rewriting everything:
   any new model is just one more row in the table.
 
 This makes the project a natural starting point for a follow-up
-course on data-driven energy analytics.)
+course on data-driven energy analytics.
 
-## 12. Future plans with the project
+## 13. Future plans with the project
 
 - Some graphs could not be plotted because of the small values of the 
    created columns `rain_6_mm/h` and `rain_1_mm/h`. We will work on a 
@@ -314,7 +314,7 @@ course on data-driven energy analytics.)
 
 ============================================================================
 
-## 13. References
+## 14. References
 
 - Meterological Data. *Time series* package, version 2020-02-15.
   <https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-europe?tab=overview>
