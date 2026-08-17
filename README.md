@@ -99,7 +99,7 @@ each days using the original column and added to the new CSV.
 
 ### 4.2 Citation
 
-?
+Do we have to put this here again?
 
 (> Open Power System Data. 2020. Data Package Time series.)
 (> Version 2020-10-06. <https://data.open-power-system-data.org/time_series/2020-10-06/>. )
@@ -214,7 +214,7 @@ package in the order above.
 
 ## 9. Baseline forecasting methods
 
-?
+Do we have to describe all the analysis we did?
 
 This project uses **only simple, transparent baselines** – no machine
 learning. The methods are:
@@ -281,32 +281,32 @@ The following figures are saved in `reports/figures/`:
 
 These figures can be inserted directly into the project report.
 
+============================================================================
+
 ## 12. Future machine-learning extension
 
-Ich würde das hier löschen, weil wir keine machine-learning machen wollen(?)
-
-The project is intentionally simple, but it is structured so that an
-ML extension can be added later without rewriting everything:
+The project is intentionally simple, but it is structured so that an ML 
+extension can be added later without rewriting everything:
 
 - `src/data_preparation.py` already produces useful features
-  (`hour`, `day_of_week`, `month`, …).
-- `src/forecasting.py` could be extended with, for example:
-  - Linear regression on the time features.
+  (`date`, `rain_mm`, `rain_6_mm/h`, `rain_1_mm/h`, ...).
+- `src/analysis.py` could be extended with, for example:
+  (- Linear regression on the time feature.
   - A regression tree or random forest.
   - A gradient boosting model.
   - A small recurrent neural network.
 - `src/evaluation.py` and the comparison table can stay the same –
-  any new model is just one more row in the table.
+  any new model is just one more row in the table.) # still discussing
 
 This makes the project a natural starting point for a follow-up
-course on data-driven energy analytics.
+course on data-driven rainfall analytics.
 
 ## 13. Future plans with the project
 
 - Some graphs could not be plotted because of the small values of the 
    created columns `rain_6_mm/h` and `rain_1_mm/h`. We will work on a 
    solution for being able to plot those graphs as well and still be 
-   precise. 
+   precise. If you have any suggestions, we would love to hear them.
 - Furthermore, we are still working on the report, therefore it is not 
    clear yet, which graphs, comparisons & correlations we will need 
    for our final project. That means, that some analysis will be changed 
