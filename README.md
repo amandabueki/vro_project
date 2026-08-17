@@ -1,4 +1,4 @@
-# Analysis of changes in heavy rainfall, regional temperature, and potential runoff voulems in Bremen
+# Analysis of changes in heavy rainfall, regional temperature, and potential runoff volumes in Bremen
 
 A student project based on a long-term (75 years) geodata from the area of Bremen.
 The project shows the relation between climate change, heavy rainfall events and environmental 
