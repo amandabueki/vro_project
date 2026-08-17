@@ -1,4 +1,4 @@
-# Analysis of changes in heavy rainfall, regional temperature, and potential runoff voulems in Bremen
+# Analysis of changes in heavy rainfall, regional temperature, and potential runoff voluems in Bremen
 
 A student project based on a long-term (75 years) geodata from the area of Bremen.
 The project shows the relation between climate change, heavy rainfall events and environmental 
@@ -9,13 +9,16 @@ enginerring.
 ## 1. Project summary
 
 The aim of the project is to investigate whether heavy daily rainfall and mean temperature in Bremen 
-have changed over time. Selected heavy rainfall events are used to carry out a simplified assessment 
-of ... (potential runoff volumes under different hypothetical surface conditions.)
+have changed over time. Selected temperature and precipitation data are used to carry out a simplified 
+assessment of heavy rainfall events (& potential runoff volumes under different hypothetical surface 
+conditions.) # <= es steht zwar in Abbys Mail, ist aber nur schwierig zu untersuchen, denn wir wissen 
+nicht, wie viel Wasser versickert und oder wie viel abgeleitet wird #
 
 The project produces:
 
 - A cleaned daily precipitation and temperature dataset of 75 years.
-- ...
+- An analysis of temperature, precipitation & heavy rainfall events and a comparison.
+- A visualization of the analysed data.
 - A set of figures saved to `reports/figures/`.
 - A short results summary printed in the terminal.
 
@@ -37,18 +40,14 @@ future, so that sewer systems can be expanded in a more effective and forward-lo
 
 ## 3. Business / company-style problem statement
 
-> **Context.** A small German energy analytics team wants to assess
-> whether *simple, transparent* forecasting rules can compete with the
-> official day-ahead forecast that the transmission system operators
-> publish on the ENTSO-E transparency platform.
+> **Context.** A small German climate change analytics team wants to assess whether climate change has 
+> an effect on heavy rainfall events, their frequency and intensity. 
 >
-> **Question.** Can simple baseline forecasting methods provide useful
-> short-term electricity demand forecasts?
+> **Question.** Can climate change increase the frequency and intensity of heavy rainfall events?
 >
-> **Deliverable.** A reproducible Python project that loads one year
-> of hourly demand data, computes three baseline forecasts, compares
-> them with the official forecast, and reports the results in a clean
-> way that a future machine-learning project can build on.
+> **Deliverable.** A reproducible Python project that loads 75 years of daily wheater data, analyzes 
+> the temperature and precipitation datas, compares them with each other, looks for a statistical
+> correlation between them, and reports the results in a clean way.
 
 ======================================================================================================
 
@@ -56,13 +55,17 @@ future, so that sewer systems can be expanded in a more effective and forward-lo
 
 The project uses the **E-OBS daily gridded meteorological data for Europe** *Time Series* package, 
 release **2020-02-15**. This dataset does not have a downloadable CSV. CSVs are created with the 
-notebooks nc_to_csv_precipitation.ipynb and nc_to scv_temperature.ipynb.
+notebooks nc_to_csv_precipitation.ipynb (bremen_daily_mean_temperature.csv) and 
+nc_to scv_temperature.ipynb (bremen_daily_precipitation.csv), they were merged (merged_data.csv) and 
+saved into `data/processed`.
 
 - Project page: <https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-europe?tab=overview>
 
 A smaller cleaned CSV (weather_data.csv) with the needed columns is saved into `data/processed/`.
 
 ### 4.1 Selected columns
+
+Selected columns from the original files:
 
 | Original column              | Renamed to  | Meaning                                      |
 |------------------------------|-------------|----------------------------------------------|
@@ -123,8 +126,8 @@ vro_project/
 Open **Command Prompt** (`cmd.exe`), not PowerShell, and run:
 
 ```bat
-mkdir Project
-cd Project
+mkdir vro_project
+cd vro_project
 code .
 python -m venv vro-1
 vro-1\Scripts\activate
@@ -138,14 +141,13 @@ git commit -m "Initial project structure"
 Connect the local project to GitHub (replace `USERNAME`):
 
 ```bat
-git remote add origin https://github.com/USERNAME/energy-demand-forecasting.git
+git remote add origin https://github.com/USERNAME/vro_project.git
 git branch -M main
 git push -u origin main
 ```
 
-> If you re-open the project later, simply run
-> `vro-tf\Scripts\activate` from the project folder to re-activate the
-> virtual environment.
+> If you re-open the project later, simply run `vro-1\Scripts\activate` from the project folder to 
+> re-activate the virtual environment.
 
 ======================================================================================================
 
@@ -218,15 +220,8 @@ already provided in the dataset.
 After running `python main.py` you will see:
 
 - A terminal printout with the comparison table:
-  ```
-  method               MAE_MW  RMSE_MW  MAPE_%  n_observations
-  Official day-ahead   ...     ...      ...     ...
-  Yesterday-same-hour  ...     ...      ...     ...
-  Last-week-same-hour  ...     ...      ...     ...
-  Rolling 24h average  ...     ...      ...     ...
-  ```
 - A short summary highlighting the best baseline method.
-- A cleaned CSV at `data/processed/germany_load_2019_clean.csv`.
+- A cleaned CSV at `data/processed/weather_data.csv`.
 
 ======================================================================================================
 
@@ -249,7 +244,7 @@ The following figures are saved in `reports/figures/`:
 |-------------------------------|---------------------------------------------------------------------------|
 | `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                            |
 | `annual_mean_temp.png`        | Mean temperature (°C) of each year                                        |
-| `heavy_rainfall_days.png`     | ...                                                                       |
+| `heavy_rainfall_days.png`     | Annual frequency of heavy rainfall days                                   |
 | `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days                 |
 | `monthly_dist.png`            | Monthly distribution of heavy rainfall events                             |
 | `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature      |
@@ -258,7 +253,7 @@ The following figures are saved in `reports/figures/`:
 | `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)                                            |
 | `seasonal_temp_vs_rain.png`   | Seasonal variation of heavy rainfall events compared with temperature     |
 | `temp_trend.png`              | Trend of temperature change                                               |
-| `temp_vs_heavy_rainfall.png`  | ...                                                                       |
+| `temp_vs_heavy_rainfall.png`  | Annual mean temperature compared with heavy rainfall days                 |
 | `temp_vs_max_precip.png`      | Annual maximum precipitation compared with mean temperature               |
 | `temp_vs_percentile.png`      | Annual frequency of extreme precipitation days compared with temperature  |
 
