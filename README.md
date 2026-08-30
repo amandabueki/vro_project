@@ -13,10 +13,10 @@ have changed over time. This investigation could provide evidence for the theore
 
 The project produces:
 
-- A cleaned daily precipitation and temperature dataset of 75 years.
-- An analysis of temperature, precipitation & heavy rainfall events and a comparison.
-- A visualization of the analysed data.
-- A set of figures saved to `reports/figures/`.
+- A cleaned daily precipitation and temperature dataset of 75 years,
+- An analysis of temperature, precipitation & heavy rainfall events and a comparison,
+- A visualization of the analysed data,
+- A set of figures saved to `reports/figures/`,
 - A short results summary printed in the terminal.
 
 ======================================================================================================
@@ -65,14 +65,6 @@ A smaller cleaned CSV (weather_data.csv) with the needed columns is saved into `
 | `regional_mean_precip_mm`    | `rain_mm`      | Daily precipitation amount in Bremen, in mm  |
 | `regional_mean_temperature_degC`  | `temp_C`  | Daily mean temperature in Bremen, in °C      |
 
-### 4.2 Citation
-
-?
-
-(> Open Power System Data. 2020. Data Package Time series.)
-(> Version 2020-10-06. <https://data.open-power-system-data.org/time_series/2020-10-06/>. )
-(> (Primary data from various sources, see project page.) )
-
 ======================================================================================================
 
 ## 5. Project structure
@@ -94,7 +86,7 @@ vro_project/
 │   ├── __init__.py
 │   ├── data_preparation.py             # load, clean, time features
 │   ├── analysis.py                     # calculations, analysis of the dataset
-│   ├── evaluation.py                   # correlation between precipitation amount and temperature
+│   ├── correlation.py                  # correlation between precipitation amount and temperature
 │   └── visualization.py                # plotting functions
 │
 ├── .gitignore
@@ -160,10 +152,10 @@ git push -u origin main
 Online NC  ─►  notebooks  ─►  CSV files   ─►  data_preparation  ─►  cleaned dataframe
                                                                            │
                                                                            ▼
-                                                                        analysis    ─► 
+                                                                        analysis    ─► calculation of variables for further precesses
                                                                            │
                                                                            ▼
-                                                                      evaluation    ─► 
+                                                                      correlation    ─► correlation analysis
                                                                            │
                                                                            ▼
                                                                       visualization ─► plotting PNG figures
@@ -176,36 +168,13 @@ Online NC  ─►  notebooks  ─►  CSV files   ─►  data_preparation  ─�
 
 ======================================================================================================
 
-(## 9. Baseline forecasting methods
-
-This project uses **only simple, transparent baselines** – no machine
-learning. The methods are:
-
-1. **Yesterday-same-hour.**
-   The forecast for hour *t* equals the actual load at hour *t − 24h*.
-   *Idea:* electricity demand has a strong daily pattern.
-
-2. **Last-week-same-hour.**
-   The forecast for hour *t* equals the actual load at hour *t − 168h*
-   (7 days). *Idea:* demand also has a weekly pattern (workdays
-   vs. weekends).
-
-3. **Rolling 24-hour average.**
-   The forecast for hour *t* equals the average of the previous 24
-   actual values. *Idea:* a smoothed recent level.
-
-All three are compared against the **official day-ahead forecast**
-already provided in the dataset.)
-
-======================================================================================================
-
-## 10. Results produced by the project
+## 9. Results produced by the project
 
 After running `python main.py` you will see:
 
-- A terminal printout with the comparison table.
-- A short summary highlighting the best baseline method.
-- A cleaned CSV at data/processed/weather_data.csv.
+- A cleaned CSV at data/processed/weather_data.csv,
+- A terminal printout with comparison & correlation tables,
+- Generated figures from the calculated variables.
 
 ======================================================================================================
 
@@ -214,32 +183,45 @@ After running `python main.py` you will see:
 All figures are produced with matplotlib in the object-oriented style:
 
 ```python
-fig, ax = plt.subplots()
-ax.plot(...)
-ax.set_xlabel(...)
-ax.set_ylabel(...)
-ax.set_title(...)
-fig.savefig("reports/figures/<name>.png", dpi=300)
+
+output_path = FIGURE_DIR / filename
+    plt.tight_layout()
+    plt.savefig(
+        output_path,
+        dpi=300,
+        bbox_inches="tight"
+    )
+    ax.plot(...)
+   ax.set_xlabel(...)
+   ax.set_ylabel(...)
+   ax.set_title(...)
+    plt.show()
+    plt.close()
 ```
 
 The following figures are saved in `reports/figures/`:
 
-| Filename                      | Content                                                                   |
-|-------------------------------|---------------------------------------------------------------------------|
-| `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                            |
-| `annual_mean_temp.png`        | Mean temperature (°C) of each year                                        |
-| `heavy_rainfall_days.png`     | ...                                                                       |
-| `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days                 |
-| `monthly_dist.png`            | Monthly distribution of heavy rainfall events                             |
-| `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature      |
-| `percentile_days.png`         | Annual frequency of extreme precipitation days                            |
-| `seasonal_dist.png`           | Seasonal distribution of heavy rainfall events                            |
-| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)                                            |
-| `seasonal_temp_vs_rain.png`   | Seasonal variation of heavy rainfall events compared with temperature     |
-| `temp_trend.png`              | Trend of temperature change                                               |
-| `temp_vs_heavy_rainfall.png`  | ...                                                                       |
-| `temp_vs_max_precip.png`      | Annual maximum precipitation compared with mean temperature               |
-| `temp_vs_percentile.png`      | Annual frequency of extreme precipitation days compared with temperature  |
+| Filename                      | Content                                                              |
+|-------------------------------|----------------------------------------------------------------------|
+| `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                       |
+| `annual_mean_temp.png`        | Mean temperature (°C) of each year                                   |
+| `heavy_rainfall_days.png`     | Number of days with heavy rainfall events (20, 30 and 40 mm)         |
+| `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days            |
+| `monthly_dist.png`            | Monthly distribution of heavy rainfall events                        |
+| `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature |
+| `percentile_days.png`         | Annual frequency of extreme precipitation days                       |
+| `seasonal_dist.png`           | Seasonal distribution of heavy rainfall events                       |
+| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)                                       |
+| `seasonal_temp_vs_rain_20mm.png` | Seasonal variation of heavy rainfall events (20 mm) compared with temperature |
+| `seasonal_temp_vs_rain_30mm.png` | Seasonal variation of heavy rainfall events (30 mm) compared with temperature |
+| `seasonal_temp_vs_rain_40mm.png` | Seasonal variation of heavy rainfall events (40 mm) compared with temperature |
+| `temp_trend.png`              | Trend of temperature change                                          |
+| `temp_vs_95th_percentile.png` | Annual frequency of extreme precipipitation days (above 95 %) compared with annual mean temperature |
+| `temp_vs_99th_percentile.png` | Annual frequency of extreme precipipitation days (above 99 %) compared with annual mean temperature |
+| `temp_vs_heavy_rainfall_20mm.png`  | Annual mean temperature compared with heavy rainfall events (20 mm) |
+| `temp_vs_heavy_rainfall_30mm.png`  | Annual mean temperature compared with heavy rainfall events (30 mm) |
+| `temp_vs_heavy_rainfall_40mm.png`  | Annual mean temperature compared with heavy rainfall events (40 mm) |
+| `temp_vs_max_precip.png`      | Annual maximum precipitation compared with mean temperature  |
 
 These figures can be inserted directly into the project report.
 

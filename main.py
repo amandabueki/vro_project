@@ -216,8 +216,6 @@ def main():
         seasonal_temperature_vs_percentile_days(seasonal_data)
     )
 
-    #monthly_temp_vs_rain = monthly_temperature_vs_heavy_rainfall(monthly_data)
-
     # Visualization
     plot_annual_mean_temp(annual_temp)
     plot_seasonal_mean_temp(seasonal_temp)

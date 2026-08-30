@@ -9,7 +9,7 @@ import numpy as np
 from scipy import stats
 from pathlib import Path
 
-# Path for saving graphs
+# path for saving graphs
 
 FIGURE_DIR = Path("reports/figures")
 FIGURE_DIR.mkdir(parents=True, exist_ok=True)
@@ -74,7 +74,7 @@ def month_labels():
 # Temperature
 # ================================================================================
 
-# anual mean temperature: Liniendiagramm
+# anual mean temperature
 
 def plot_annual_mean_temp(annual_temp):
 
@@ -112,7 +112,7 @@ def plot_annual_mean_temp(annual_temp):
     plt.legend()
     save_and_close("annual_mean_temp.png")
 
-# seasonal mean temperature: Gruppiertes Liniendiagramm für 1950, Durchschnitt oder Mitte und 2025
+# seasonal mean temperature
 
 def plot_seasonal_mean_temp(seasonal_temp):
 
@@ -163,7 +163,7 @@ def plot_seasonal_mean_temp(seasonal_temp):
     plt.grid(True, alpha=0.3)
     save_and_close("seasonal_mean_temp.png")
 
-# temperature trend: Streudiagramm + Trendlinie
+# temperature trend
 
 def plot_temp_trend(annual_temp, trend):
 
@@ -222,7 +222,7 @@ def plot_temp_trend(annual_temp, trend):
 # ================================================================================
 
 # whether heavy rainfall indicators changed
-# maximum daily precipitation: Liniendiagramm
+# maximum daily precipitation
 
 def plot_annual_max_precip(max_precip):
 
@@ -253,7 +253,7 @@ def plot_annual_max_precip(max_precip):
     plt.grid(True, alpha=0.3)
     save_and_close("annual_max_precip.png")
 
-# heavy rainfall days: Gruppiertes Liniendiagramm von 20 und 30 mm/Tag
+# heavy rainfall days with 20, 30 and 40 mm
 
 def plot_heavy_rainfall_days(days20, days30, days40):
 
@@ -300,7 +300,7 @@ def plot_heavy_rainfall_days(days20, days30, days40):
     plt.grid(True, alpha=0.3)
     save_and_close("heavy_rainfall_days.png")
 
-# percentile days: Gruppiertes Liniendiagramm von 95 und 99 %
+# percentile days with precipitation over the 95th and 99th percentile
 
 def plot_percentile_days(days95, days99):
 
@@ -353,7 +353,7 @@ def plot_percentile_days(days95, days99):
     plt.grid(True,alpha=0.3)
     save_and_close("percentile_days.png")
 
-# monthly distribution of heavy rainfall events: Gruppiertes Balkendiagramm
+# monthly distribution of heavy rainfall events
 
 def plot_monthly_dist(monthly_dist):
 
@@ -538,7 +538,7 @@ def plot_max_consecutive_precip(max3, max5):
 # ================================================================================
 
 # whether temperature and rainfall indicators are statistically associated
-# temperature vs. maximum rainfall: Scatterplot & Regressionslinie, r und p-Wert
+# temperature vs. maximum rainfall
 
 def plot_temp_vs_max_precip(comparison):
 
@@ -610,7 +610,7 @@ def plot_temp_vs_max_precip(comparison):
     plt.grid(True, alpha=0.3)
     save_and_close("temp_vs_max_precip.png")
 
-# temperature vs. heavy rainfall days: Scatterplot & Regressionslinie, r und p-Wert
+# temperature vs. heavy rainfall days
 
 def plot_temp_vs_heavy_rainfall(comparison, threshold=30):
 
@@ -683,7 +683,7 @@ def plot_temp_vs_heavy_rainfall(comparison, threshold=30):
     plt.grid(True, alpha=0.3)
     save_and_close(f"temp_vs_heavy_rainfall_{threshold}mm.png")
 
-# temperature vs. 95 percentile days: Scatterplot & Regressionslinie, r und p-Wert
+# temperature vs. 95 percentile days
 
 def plot_temp_vs_percentile(comparison, percentile=95):
 
@@ -759,7 +759,7 @@ def plot_temp_vs_percentile(comparison, percentile=95):
     save_and_close(f"temp_vs_{percentile}th_percentile.png")
 
 # how heavy rainfall varies by month and season
-# mothhly: Scatter
+# mothhly
 
 def plot_monthly_temp_vs_rain(comparison):
 
@@ -902,7 +902,7 @@ def plot_monthly_temp_vs_rain(comparison):
     plt.grid(True, alpha=0.3)
     save_and_close("monthly_temp_vs_rain.png")
 
-# seasonal: Scatter
+# seasonal
 
 def plot_seasonal_temp_vs_rain(comparison, threshold=30):
 
@@ -933,7 +933,7 @@ def plot_seasonal_temp_vs_rain(comparison, threshold=30):
 
     season_mapping = season_labels()
 
-    plt.figure(figsize=(13, 4))
+    plt.figure(figsize=(13, 5))
 
     for season_number in [1, 2, 3, 4]:
 
@@ -959,7 +959,7 @@ def plot_seasonal_temp_vs_rain(comparison, threshold=30):
     plt.gca().xaxis.set_major_locator(ticker.MultipleLocator(1))
     plt.gca().yaxis.set_major_locator(ticker.MultipleLocator(1))
     plt.xlabel("Seasonal mean temperature (°C)")
-    plt.ylabel("Number of heavy rainfall days")
+    plt.ylabel(f"Number of heavy rainfall days with ≥ {threshold} mm")
     # plt.title(f"Seasonal temperature vs. heavy rainfall frequency ≥ {threshold} mm/day")
     plt.legend(title="Seasons")
     plt.grid(True, alpha=0.3)

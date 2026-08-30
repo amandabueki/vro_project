@@ -1,8 +1,8 @@
 """
 analysis.py
 
-Functions for analysing long-term precipitation and temperature data to investigate 
-the relationship between heavy rainfall events and climate change.
+Functions for analysing long-term precipitation and temperature data to prepare 
+analysis of the relationship between heavy rainfall events and climate change.
 """
 
 import pandas as pd
@@ -312,11 +312,11 @@ def seasonal_precip(df: pd.DataFrame) -> pd.DataFrame:
 
     return result
 
-# Seasonal heavy rainfall frequency (20 mm/day & 30 mm/day)
+# seasonal heavy rainfall frequency (20 mm/day & 30 mm/day)
 
 def seasonal_heavy_rainfall_summary(seasonal_data: pd.DataFrame):
 
-    return(
+    result = (
         seasonal_data
         .groupby("season", as_index=False)
         [
@@ -327,6 +327,8 @@ def seasonal_heavy_rainfall_summary(seasonal_data: pd.DataFrame):
         ]
         .mean()
     )
+
+    return result
 
 # calculation of seasonal percentile days
 
@@ -367,11 +369,11 @@ def annual_mean_temp(df: pd.DataFrame) -> pd.DataFrame:
         )
     )
 
-# Seasonal mean temperature
+# seasonal mean temperature
 
 def seasonal_mean_temp(df: pd.DataFrame) -> pd.DataFrame:
 
-    return (
+    result = (
         df
         .groupby(
             ["year", "season"],
@@ -385,11 +387,13 @@ def seasonal_mean_temp(df: pd.DataFrame) -> pd.DataFrame:
         )
     )
 
+    return result
+
 # monthly mean temperature
 
 def monthly_mean_temp(df: pd.DataFrame) -> pd.DataFrame:
 
-    return (
+    result = (
         df
         .groupby(
             "month",
@@ -402,6 +406,8 @@ def monthly_mean_temp(df: pd.DataFrame) -> pd.DataFrame:
             }
         )
     )
+
+    return result
 
 # temperature anomalies
 

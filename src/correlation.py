@@ -1,7 +1,7 @@
 """
 correlation.py
 
-Functions for evaluating the relationship between precipitation and temperature indicators.
+Functions for calculating the correlation between precipitation and temperature indicators.
 """
 
 import numpy as np
@@ -80,7 +80,7 @@ def compare_temp_max_precip(annual_data: pd.DataFrame):
         "max_precip_mm"
     )
 
-# Temperature vs. heavy rainfall days (≥ 20 mm/day & ≥ 30 mm/day
+# temperature vs. heavy rainfall days (≥ 20 mm/day & ≥ 30 mm/day)
 # comparison of annual mean temperature and the number of heavy rainfall days 
 
 def compare_temp_heavy_rainfall(annual_data: pd.DataFrame):
