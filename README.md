@@ -178,7 +178,7 @@ After running `python main.py` you will see:
 
 ======================================================================================================
 
-## 11. How figures are saved
+## 10. How figures are saved
 
 All figures are produced with matplotlib in the object-oriented style:
 
@@ -227,7 +227,7 @@ These figures can be inserted directly into the project report.
 
 ======================================================================================================
 
-## 12. References
+## 11. References
 
 - Meterological Data. Time series package, version 2020-02-15. https://cds.climate.copernicus.eu/datasets/insitu-gridded-observations-europe?tab=overview
 - pandas documentation. https://pandas.pydata.org/docs/
