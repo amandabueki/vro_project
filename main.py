@@ -31,7 +31,8 @@ from src.analysis import (
 
 from src.visualization import (
     plot_annual_mean_temp,
-    plot_seasonal_mean_temp,
+    plot_seasonal_mean_temp_years,
+    plot_monthly_mean_temp,
     plot_temp_trend,
     plot_annual_max_precip,
     plot_heavy_rainfall_days,
@@ -218,13 +219,14 @@ def main():
 
     # Visualization
     plot_annual_mean_temp(annual_temp)
-    plot_seasonal_mean_temp(seasonal_temp)
+    plot_seasonal_mean_temp_years(seasonal_temp)
     plot_temp_trend(annual_temp, trend)
     plot_annual_max_precip(annual_max)
     plot_heavy_rainfall_days(days20,days30,days40)
     plot_percentile_days(days95, days99)
     plot_max_consecutive_precip(max3, max5)
     plot_monthly_dist(monthly)
+    plot_monthly_mean_temp(monthly_temp)
     plot_seasonal_dist(seasonal)
     plot_temp_vs_max_precip(annual_data)
     plot_temp_vs_heavy_rainfall(annual_data, threshold=20)

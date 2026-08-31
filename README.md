@@ -1,6 +1,6 @@
 # Long-term changes in daily heavy rainfall and temperature in Bremen
 
-A student project based on a long-term (75 years) geodata from the area of Bremen.
+A student project based on a long-term (76 years) geodata from the area of Bremen.
 The project shows the relation between climate change, heavy rainfall events and environmental 
 engineering. 
 
@@ -13,7 +13,7 @@ have changed over time. This investigation could provide evidence for the theore
 
 The project produces:
 
-- A cleaned daily precipitation and temperature dataset of 75 years,
+- A cleaned daily precipitation and temperature dataset of 76 years,
 - An analysis of temperature, precipitation & heavy rainfall events and a comparison,
 - A visualization of the analysed data,
 - A set of figures saved to `reports/figures/`,
@@ -30,7 +30,7 @@ increasing amount of impervious surfaces, rainwater often remains on the streets
 The intention is for the rainwater to be collected and drained away through the sewer system. However, 
 since sewer systems are often not designed to handle such heavy rainfall events, these enormous volumes 
 of water — or at least a portion of them — cannot be drained, which can lead to flooding. The goal of 
-this project is therefore to analyze rainfall data from the past 75 years to develop a forecast for the 
+this project is therefore to analyze rainfall data from the past 76 years to develop a forecast for the 
 future, so that sewer systems can be expanded in a more effective and forward-looking manner.
 
 ======================================================================================================
@@ -42,7 +42,7 @@ future, so that sewer systems can be expanded in a more effective and forward-lo
 >
 > **Question.** Can climate change increase the frequency and intensity of heavy rainfall events?
 >
-> **Deliverable.** A reproducible Python project that loads 75 years of daily wheater data, analyzes 
+> **Deliverable.** A reproducible Python project that loads 76 years of daily wheater data, analyzes 
 > the temperature and precipitation datas, compares them with each other, looks for a statistical 
 > correlation between them, and reports the results in a clean way.
 ======================================================================================================
@@ -79,8 +79,7 @@ vro_project/
 │   └── nc_to_csv_temperature.ipynb     # notebooks for converting nc to csv
 │
 ├── reports/
-│   ├── figures/                        # all generated PNG figures
-│   └── report_outline.md               # writing guide for the ~20-page report
+│   └── figures/                        # all generated PNG figures
 │
 ├── src/
 │   ├── __init__.py

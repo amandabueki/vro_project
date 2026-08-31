@@ -112,9 +112,9 @@ def plot_annual_mean_temp(annual_temp):
     plt.legend()
     save_and_close("annual_mean_temp.png")
 
-# seasonal mean temperature
+# seasonal mean temperature for selected years
 
-def plot_seasonal_mean_temp(seasonal_temp):
+def plot_seasonal_mean_temp_years(seasonal_temp):
 
     required_columns = [
         "year",
@@ -162,6 +162,73 @@ def plot_seasonal_mean_temp(seasonal_temp):
     plt.legend(title="Year")
     plt.grid(True, alpha=0.3)
     save_and_close("seasonal_mean_temp.png")
+
+# monthly mean temperature
+
+def plot_monthly_mean_temp(monthly_temp):
+
+    required_columns = [
+            "month",
+            "mean_temp_C"
+    ]
+
+    missing = [
+        column
+        for column in required_columns
+        if column not in monthly_temp.columns
+    ]
+
+    if missing:
+        raise KeyError(
+            f"Missing required column(s): {missing}. "
+            f"Available columns: {list(monthly_temp.columns)}"
+        )
+
+    data = (
+        monthly_temp[
+            required_columns
+        ]
+        .dropna()
+        .sort_values("month")
+        .copy()
+    )
+
+    if data.empty:
+        print(
+            "No valid data available for "
+            "monthly mean temperature plot."
+        )
+        return
+
+    month_mapping = month_labels()
+
+    labels = [
+        month_mapping.get(
+            int(month),
+            str(month)
+        )
+        for month in data["month"]
+    ]
+
+    plt.figure(figsize=(10, 5))
+
+    plt.plot(
+        data["month"],
+        data["mean_temp_C"],
+        marker="o",
+        linewidth=2
+    )
+
+    plt.xticks(
+        data["month"],
+        labels
+    )
+
+    plt.xlabel("Month")
+    plt.ylabel("Mean temperature (°C)")
+    #plt.title("Monthly mean temperature")
+    plt.grid(True, alpha=0.3)
+    save_and_close("monthly_mean_temp.png")
 
 # temperature trend
 
