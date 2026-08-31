@@ -565,41 +565,6 @@ def plot_seasonal_dist(seasonal_dist):
     plt.grid(True, axis='y', alpha=0.3)
     save_and_close("seasonal_dist.png")
 
-# maximum consecutive precipitation over 3 or 5 days
-
-def plot_max_consecutive_precip(max3, max5):
-
-    data3 = max3[
-        ["year", "max_3_day_precip_mm"]
-    ].dropna()
-
-    data5 = max5[
-        ["year", "max_5_day_precip_mm"]
-    ].dropna()
-
-    plt.figure(figsize=(10, 5))
-
-    plt.plot(
-        data3["year"],
-        data3["max_3_day_precip_mm"],
-        label="Maximum 3-day precipitation"
-    )
-
-    plt.plot(
-        data5["year"],
-        data5["max_5_day_precip_mm"],
-        label="Maximum 5-day precipitation"
-    )
-
-    plt.gca().xaxis.set_major_locator(ticker.MultipleLocator(5))
-    plt.gca().yaxis.set_major_locator(ticker.MultipleLocator(5))
-    plt.xlabel("Year")
-    plt.ylabel("Precipitation (mm)")
-    # plt.title("Maximum precipitation over consecutive days")
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    save_and_close("max_consecutive_precip.png")
-
 # ================================================================================
 # Relationsships
 # ================================================================================

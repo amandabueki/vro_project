@@ -15,9 +15,6 @@ from src.analysis import (
     days_above_40mm_threshold,
     precip_percentile,
     days_above_percentile,
-    max_consecutive_precip,
-    max_consecutive_precip_three,
-    max_consecutive_precip_five,
     monthly_precip,
     seasonal_precip,
     seasonal_heavy_rainfall_summary,
@@ -39,7 +36,6 @@ from src.visualization import (
     plot_percentile_days,
     plot_monthly_dist,
     plot_seasonal_dist,
-    plot_max_consecutive_precip,
     plot_temp_vs_max_precip,
     plot_temp_vs_heavy_rainfall,
     plot_temp_vs_percentile,
@@ -72,8 +68,6 @@ def main():
     days99 = days_above_percentile(df,99)
     monthly = monthly_precip(df)
     seasonal = seasonal_precip(df)
-    max3 = max_consecutive_precip_three(df,3)
-    max5 = max_consecutive_precip_five(df,5)
 
     # Temperature analysis
     annual_temp = annual_mean_temp(df)
@@ -224,7 +218,6 @@ def main():
     plot_annual_max_precip(annual_max)
     plot_heavy_rainfall_days(days20,days30,days40)
     plot_percentile_days(days95, days99)
-    plot_max_consecutive_precip(max3, max5)
     plot_monthly_dist(monthly)
     plot_monthly_mean_temp(monthly_temp)
     plot_seasonal_dist(seasonal)

@@ -173,50 +173,6 @@ def days_above_percentile(
 
     return result
 
-# maximum precipitation over three & five consecutive days
-
-def max_consecutive_precip(
-    df: pd.DataFrame,
-    window: int
-) -> pd.DataFrame:
-
-    df = df.sort_values("date").copy()
-
-    results = []
-
-    for year, group in df.groupby("year"):
-        group = group.sort_values("date")
-        rolling_sum = (
-            group["rain_mm"]
-            .rolling(window=window, min_periods=window)
-            .sum()
-        )
-
-        results.append({
-            "year": year,
-            f"max_{window}_day_precip_mm": rolling_sum.max()
-        })
-
-    return pd.DataFrame(results)
-
-def max_consecutive_precip_three(
-    df: pd.DataFrame,
-    window: int = 3
-) -> pd.DataFrame:
-
-    return max_consecutive_precip(df, window)
-
-def max_consecutive_precip_five(
-        df: pd.DataFrame,
-        window: int = 5
-) -> pd.DataFrame:
-
-    return max_consecutive_precip(df, window)
-
-# three & five consecutive days with 20 mm/day
-
-
-
 # monthly and seasonal distribution of heavy rainfall
 
 def monthly_precip(df: pd.DataFrame) -> pd.DataFrame:
