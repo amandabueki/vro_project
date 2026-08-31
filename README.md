@@ -116,7 +116,7 @@ git commit -m "Initial project structure"
 Connect the local project to GitHub (replace `USERNAME`):
 
 ```bat
-git remote add origin https://github.com/USERNAME/energy-demand-forecasting.git
+git remote add origin https://github.com/amandabueki/vro_project
 git branch -M main
 git push -u origin main
 ```
