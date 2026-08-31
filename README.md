@@ -205,7 +205,6 @@ The following figures are saved in `reports/figures/`:
 | `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                       |
 | `annual_mean_temp.png`        | Mean temperature (°C) of each year                                   |
 | `heavy_rainfall_days.png`     | Number of days with heavy rainfall events (20, 30 and 40 mm)         |
-| `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days            |
 | `monthly_dist.png`            | Monthly distribution of heavy rainfall events                        |
 | `monthly_mean_temp.png`       | Monthly mean temperature (°C) over the 76 years                      |
 | `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature |
