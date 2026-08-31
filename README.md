@@ -68,6 +68,7 @@ A smaller cleaned CSV (weather_data.csv) with the needed columns is saved into `
 ======================================================================================================
 
 ## 5. Project structure
+```
 vro_project/
 │
 ├── data/
@@ -92,7 +93,7 @@ vro_project/
 ├── README.md                           # <-- main documentation
 ├── requirements.txt
 └── main.py                             # main entry point
-
+```
 ======================================================================================================
 
 ## 6. Setup instructions (Windows, Command Prompt)
