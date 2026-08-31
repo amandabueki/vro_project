@@ -207,10 +207,11 @@ The following figures are saved in `reports/figures/`:
 | `heavy_rainfall_days.png`     | Number of days with heavy rainfall events (20, 30 and 40 mm)         |
 | `max_consecutive_precip.png`  | Maximum consecutive precipitation over three or five days            |
 | `monthly_dist.png`            | Monthly distribution of heavy rainfall events                        |
+| `monthly_mean_temp.png`       | Monthly mean temperature (°C) over the 76 years                      |
 | `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature |
 | `percentile_days.png`         | Annual frequency of extreme precipitation days                       |
 | `seasonal_dist.png`           | Seasonal distribution of heavy rainfall events                       |
-| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C)                                       |
+| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C) in selected years                     |
 | `seasonal_temp_vs_rain_20mm.png` | Seasonal variation of heavy rainfall events (20 mm) compared with temperature |
 | `seasonal_temp_vs_rain_30mm.png` | Seasonal variation of heavy rainfall events (30 mm) compared with temperature |
 | `seasonal_temp_vs_rain_40mm.png` | Seasonal variation of heavy rainfall events (40 mm) compared with temperature |
