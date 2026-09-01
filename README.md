@@ -201,27 +201,27 @@ output_path = FIGURE_DIR / filename
 
 The following figures are saved in `reports/figures/`:
 
-| Filename                      | Content                                                              |
-|-------------------------------|----------------------------------------------------------------------|
-| `annual_max_precip.png`       | Maximal precipitation amount (mm) of each year                       |
-| `annual_mean_temp.png`        | Mean temperature (°C) of each year                                   |
-| `heavy_rainfall_days.png`     | Number of days with heavy rainfall events (20, 30 and 40 mm)         |
-| `monthly_dist.png`            | Monthly distribution of heavy rainfall events                        |
-| `monthly_mean_temp.png`       | Monthly mean temperature (°C) over the 76 years                      |
-| `monthly_temp_vs_rain.png`    | Monthly variation of heavy rainfall events compared with temperature |
-| `percentile_days.png`         | Annual frequency of extreme precipitation days                       |
-| `seasonal_dist.png`           | Seasonal distribution of heavy rainfall events                       |
-| `seasonal_mean_temp.png`      | Seasonal mean temperature (°C) in selected years                     |
-| `seasonal_temp_vs_rain_20mm.png` | Seasonal variation of heavy rainfall events (20 mm) compared with temperature |
-| `seasonal_temp_vs_rain_30mm.png` | Seasonal variation of heavy rainfall events (30 mm) compared with temperature |
-| `seasonal_temp_vs_rain_40mm.png` | Seasonal variation of heavy rainfall events (40 mm) compared with temperature |
-| `temp_trend.png`              | Trend of temperature change                                          |
-| `temp_vs_95th_percentile.png` | Annual frequency of extreme precipipitation days (above 95 %) compared with annual mean temperature |
-| `temp_vs_99th_percentile.png` | Annual frequency of extreme precipipitation days (above 99 %) compared with annual mean temperature |
-| `temp_vs_heavy_rainfall_20mm.png`  | Annual mean temperature compared with heavy rainfall events (20 mm) |
-| `temp_vs_heavy_rainfall_30mm.png`  | Annual mean temperature compared with heavy rainfall events (30 mm) |
-| `temp_vs_heavy_rainfall_40mm.png`  | Annual mean temperature compared with heavy rainfall events (40 mm) |
-| `temp_vs_max_precip.png`      | Annual maximum precipitation compared with mean temperature  |
+| Filename                          | Content                                                            |
+|-----------------------------------|--------------------------------------------------------------------|
+| `annual_max_precip.png`           | Maximal rainfall amounts from 1950 to 2025 in Bremen and their distribution relative to the heavy rainfall thresholds                                                   |
+| `annual_mean_temp.png`            | Changes in mean temperatures and a trend line from 1950 to 2025 in Bremen                                                                                                   |
+| `heavy_rainfall_days.png`         | Number of heavy (≥ 20 mm), intense heavy (≥ 30 mm) and extremely intense heavy rainfall (≥ 40 mm) events in Bremen from 1950 to 2025                                      |
+| `monthly_dist.png`                | Monthly distribution of heavy rainfall events from 1950-2025 in Bremen                                                                                                   |
+| `monthly_mean_temp.png`           | Monthly mean temperature with measurements from 1950 to 2025 in Bremen                                                                                                   |
+| `monthly_temp_vs_rain.png`        | Monthly variarion of heavy rainfall events compared with monthly mean temperature based on measured data from 1950 to 2025 in Bremen                                      |
+| `percentile_days.png`             | Annual frequency of days that exceed the 95th or 99th percentile   |
+| `seasonal_dist.png`               | Seasonal distribution of heavy rainfall events from 1950-2025 in Bremen                                                                                                   |
+| `seasonal_mean_temp.png`          | Seasonal comparison of mean temperatures for the years 1950, 1975, 2000 and 2025 based on measurements in Bremen                                                            |
+| `seasonal_temp_vs_rain_20mm.png`  | Seasonal variation of heavy rainfall events with 20 mm/day compared with seasonal mean temperature based on measured data from 1950 to 2025 in Bremen                        |
+| `seasonal_temp_vs_rain_30mm.png`  | Seasonal variation of heavy rainfall events with 30 mm/day compared with seasonal mean temperature based on measured data from 1950 to 2025 in Bremen                        |
+| `seasonal_temp_vs_rain_40mm.png`  | Seasonal variation of heavy rainfall events with 20 mm/day compared with seasonal mean temperature based on measured data from 1950 to 2025 in Bremen                        |
+| `temp_trend`                      | Long term temperature trend from 1950-2025 in Bremen               |
+| `temp_vs_95th_percentile.png`     | Annual frequency of extreme precipitation days (above the 95th percentile) compared with annual temperature based on measured data from 1950 to 2025 in Bremen          |
+| `temp_vs_99th_percentile.png`     | Annual frequency of extreme precipitation days (above the 95th percentile) compared with annual temperature based on measured data from 1950 to 2025 in Bremen          |
+| `temp_vs_heavy_rainfall_20mm.png` | Correlation between mean temperatures and heavy rainfall events with 20 mm/day based on measurements from 1950 to 2025 in Bremen                                         |
+| `temp_vs_heavy_rainfall_30mm.png` | Correlation between mean temperatures and heavy rainfall events with 30 mm/day in Bremen from 1950 to 2025                                                               |
+| `temp_vs_heavy_rainfall_40mm.png` | Correlation between mean temperatures and heavy rainfall events with 40 mm/day in Bremen from 1950 to 2025                                                               |
+| `temp_vs_max_precip.png`          | Correlation between mean temperatures and maximum rainfall totals based on measurements from 1950 to 2025 in Bremen                                                        |
 
 These figures can be inserted directly into the project report.
 

@@ -611,7 +611,7 @@ def plot_temp_vs_max_precip(comparison):
             x_line,
             y_line,
             color="red",
-            label="Regression line"
+            label="Trend line"
         )
 
         textstr = (
@@ -685,7 +685,7 @@ def plot_temp_vs_heavy_rainfall(comparison, threshold=30):
             x_line,
             y_line,
             color="red",
-            label="Regression line"
+            label="Trend line"
         )
 
         textstr = (
@@ -759,7 +759,7 @@ def plot_temp_vs_percentile(comparison, percentile=95):
             x_line,
             y_line,
             color="red",
-            label="Regression line"
+            label="Trend line"
         )
 
         textstr = (
