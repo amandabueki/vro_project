@@ -4,7 +4,7 @@ A student project based on a long-term (76 years) geodata from the area of Breme
 The project shows the relation between climate change, heavy rainfall events and environmental 
 engineering. 
 
-======================================================================================================
+============================================================================
 
 ## 1. Project summary
 
@@ -19,7 +19,7 @@ The project produces:
 - A set of figures saved to `reports/figures/`,
 - A short results summary printed in the terminal.
 
-======================================================================================================
+============================================================================
 
 ## 2. Environmental engineering motivation
 
@@ -33,7 +33,7 @@ of water — or at least a portion of them — cannot be drained, which can lead
 this project is therefore to analyze rainfall data from the past 76 years to develop a forecast for the 
 future, so that sewer systems can be expanded in a more effective and forward-looking manner.
 
-======================================================================================================
+============================================================================
 
 ## 3. Business / company-style problem statement
 
@@ -45,7 +45,7 @@ future, so that sewer systems can be expanded in a more effective and forward-lo
 > **Deliverable.** A reproducible Python project that loads 76 years of daily wheater data, analyzes 
 > the temperature and precipitation datas, compares them with each other, looks for a statistical 
 > correlation between them, and reports the results in a clean way.
-======================================================================================================
+============================================================================
 
 ## 4. Dataset
 
@@ -65,7 +65,7 @@ A smaller cleaned CSV (weather_data.csv) with the needed columns is saved into `
 | `regional_mean_precip_mm`    | `rain_mm`      | Daily precipitation amount in Bremen, in mm  |
 | `regional_mean_temperature_degC`  | `temp_C`  | Daily mean temperature in Bremen, in °C      |
 
-======================================================================================================
+============================================================================
 
 ## 5. Project structure
 ```
@@ -94,15 +94,15 @@ vro_project/
 ├── requirements.txt
 └── main.py                             # main entry point
 ```
-======================================================================================================
+============================================================================
 
 ## 6. Setup instructions (Windows, Command Prompt)
 
 Open **Command Prompt** (`cmd.exe`), not PowerShell, and run:
 
 ```bat
-mkdir Project
-cd Project
+mkdir vro_project
+cd vro_project
 code .
 python -m venv vro-1
 vro-1\Scripts\activate
@@ -124,8 +124,7 @@ git push -u origin main
 > If you re-open the project later, simply run
 > `vro-1\Scripts\activate` from the project folder to re-activate the
 > virtual environment.
-
-======================================================================================================
+============================================================================
 
 ## 7. How to run the project in VS Code
 
@@ -144,7 +143,7 @@ git push -u origin main
    ```
 6. Check the generated figures in `reports/figures/` and the cleaned dataset in `data/processed/`.
 
-======================================================================================================
+============================================================================
 
 ## 8. Workflow
 
@@ -166,7 +165,8 @@ Online NC  ─►  notebooks  ─►  CSV files   ─►  data_preparation  ─�
 
 `main.py` is the orchestrator. It calls the functions from the `src/` package in the order above.
 
-======================================================================================================
+============================================================================
+
 
 ## 9. Results produced by the project
 
@@ -176,7 +176,7 @@ After running `python main.py` you will see:
 - A terminal printout with comparison & correlation tables,
 - Generated figures from the calculated variables.
 
-======================================================================================================
+============================================================================
 
 ## 10. How figures are saved
 
@@ -225,7 +225,7 @@ The following figures are saved in `reports/figures/`:
 
 These figures can be inserted directly into the project report.
 
-======================================================================================================
+============================================================================
 
 ## 11. References
 
